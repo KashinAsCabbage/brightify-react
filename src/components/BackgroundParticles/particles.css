@@ -1,0 +1,28 @@
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* CRITICAL: Allows clicks to pass through */
+    z-index: 5; /* increased to sit above forest-bg but below content-wrapper */
+    overflow: hidden;
+}
+.particle {
+    position: absolute;
+    top: -10%;
+    animation-name: fallAndSway;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.particle.leaf {
+    border-radius: 2px 15px 2px 15px; 
+}
+.particle.circle {
+    border-radius: 50%;
+}
+@keyframes fallAndSway {
+    0% { top: -10%; transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(40px) rotate(180deg); }
+    100% { top: 110%; transform: translateX(-40px) rotate(360deg); }
+}

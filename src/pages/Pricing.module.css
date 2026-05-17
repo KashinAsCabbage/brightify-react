@@ -1,0 +1,222 @@
+.pageContainer {
+  min-height: 100vh;
+  background-color: #020617; /* Very dark slate */
+  background-image: radial-gradient(circle at top, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
+                    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #f8fafc;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  flex: 1;
+  max-width: 400px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premiumCard {
+  transform: scale(1.05);
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.15), inset 0 0 20px rgba(56, 189, 248, 0.05);
+  z-index: 10;
+}
+
+.premiumCard:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.25), inset 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+}
+
+.cardPrice {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.pricePeriod {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.featureIcon {
+  color: #38bdf8;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.basicIcon {
+  color: #94a3b8;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  margin-top: 2rem;
+}
+
+.btnBasic {
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btnPremium {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  color: white;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btnPremium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(56, 189, 248, 0.35);
+}
+
+.btnPremium:disabled {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+/* Spinner for Loading State */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .card {
+    width: 100%;
+  }
+
+  .premiumCard {
+    transform: scale(1);
+  }
+  
+  .premiumCard:hover {
+    transform: scale(1.02);
+  }
+}

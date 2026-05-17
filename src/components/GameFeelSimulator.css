@@ -1,0 +1,377 @@
+/* GameFeelSimulator.css */
+
+.gfs-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #0f172a; /* slate-900 */
+  cursor: default;
+  font-family: 'Courier New', monospace;
+  box-sizing: border-box;
+}
+
+.gfs-container {
+  width: 100%;
+  max-width: 64rem; /* max-w-5xl */
+}
+
+/* Typography */
+.gfs-title-container {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.gfs-main-title {
+  font-size: 1.875rem;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.gfs-subtitle {
+  color: #94a3b8; /* slate-400 */
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+/* Arena Layout */
+.gfs-arena-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+.gfs-arena-padding {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 equivalent */
+}
+@media (min-width: 768px) {
+  .gfs-arena-padding {
+    padding: 2rem;
+  }
+}
+
+/* Health Bars */
+.gfs-health-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem; /* gap-5 */
+}
+.gfs-health-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+}
+.gfs-health-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gfs-health-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+.gfs-health-value {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+.gfs-health-track {
+  height: 0.75rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid #475569;
+}
+.gfs-health-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+.gfs-health-pips {
+  display: flex;
+  gap: 0.25rem;
+}
+.gfs-health-pip {
+  height: 0.25rem;
+  flex: 1 1 0%;
+  border-radius: 9999px;
+}
+
+/* Score & Combo */
+.gfs-score-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gfs-score-text {
+  font-size: 0.75rem;
+  color: #64748b;
+  letter-spacing: 0.1em;
+}
+.gfs-combo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+/* Battle Track */
+.gfs-track {
+  position: relative;
+  height: 7rem; /* h-28 */
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.gfs-star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 9999px;
+  background-color: white;
+}
+.gfs-track-ground {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+.gfs-track-trail {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  height: 0.125rem;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+.gfs-wizard-container {
+  position: absolute;
+  bottom: 2.5rem;
+}
+.gfs-bee-container {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 0.5rem;
+}
+@media (min-width: 768px) {
+  .gfs-bee-container { right: 2rem; }
+}
+.gfs-sprite-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  gap: 0.25rem;
+}
+.gfs-sprite-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+.gfs-sprite-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.gfs-banner {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Quiz Card */
+.gfs-quiz-card {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.gfs-question-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.gfs-question-q {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+.gfs-question-text {
+  font-size: 1.25rem;
+  color: #f5f5f4;
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .gfs-question-text { font-size: 1.5rem; }
+}
+.gfs-answer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* Answer Blanks */
+.gfs-blanks-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.gfs-blank-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.gfs-blank-letter-box {
+  width: 2.25rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.25rem;
+}
+.gfs-blank-letter {
+  font-size: 1.875rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.gfs-blank-underline {
+  width: 2.25rem;
+  height: 0.125rem;
+  border-radius: 9999px;
+}
+
+/* Progress Bar */
+.gfs-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.gfs-progress-track {
+  height: 0.25rem;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.gfs-progress-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #334155;
+  letter-spacing: 0.1em;
+}
+
+/* Helpers & Utils */
+.gfs-footer-text {
+  text-align: center;
+  color: #334155;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-top: 0.75rem;
+}
+.gfs-abs-fill {
+  position: absolute;
+  inset: 0;
+}
+.gfs-pointer-none {
+  pointer-events: none;
+}
+.gfs-z-50 { z-index: 50; }
+.gfs-z-40 { z-index: 40; }
+.gfs-z-30 { z-index: 30; }
+.gfs-z-10 { z-index: 10; }
+
+/* End Screen */
+.gfs-end-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  gap: 1rem;
+}
+.gfs-end-emoji {
+  font-size: 6rem;
+}
+.gfs-end-title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+.gfs-end-desc {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+.gfs-btn {
+  margin-top: 0.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid #818cf8;
+  cursor: pointer;
+  font-family: inherit;
+}
+.gfs-btn:hover {
+  background-color: #6366f1;
+}
+
+/* Loading State */
+.gfs-loading-card {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(99,102,241,0.4);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.gfs-dot-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.gfs-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #818cf8;
+}

@@ -1,0 +1,163 @@
+body, #root {
+  background-color: var(--bg-color, #16171d);
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-color, #e2e8f0);
+  transition: background-image 0.5s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================================
+   0. CLASSIC MODES
+========================================= */
+
+/* Custom Image Theme */
+[data-theme="custom-new-bg"] {
+  --bg-image: url('/new-bg.jpg');
+  --bg-color: #0f172a; 
+  --text-color: #f1f5f9; 
+  --accent-color: #059669; /* Dark green accent */
+  --glass-bg: rgba(15, 23, 42, 0.7);
+}
+
+/* Clean, standard light mode */
+[data-theme="default-light"] {
+  --bg-color: #f8fafc; 
+  --text-color: #0f172a; 
+  --accent-color: #3b82f6; 
+  --glass-bg: rgba(255, 255, 255, 0.7);
+}
+
+/* Standard, sleek dark mode */
+[data-theme="classic-dark"] {
+  --bg-color: #0f172a; 
+  --text-color: #f1f5f9; 
+  --accent-color: #3b82f6; 
+  --glass-bg: rgba(30, 41, 59, 0.7);
+}
+
+/* =========================================
+   1. CORE BIOMES
+========================================= */
+
+/* Midnight Grove: Deep misty night forest with dark frosted glass */
+[data-theme="midnight-grove"] {
+  --bg-image: url('https://media.istockphoto.com/id/1987700960/photo/moon-reflecting-on-the-water-surface-of-a-lake.webp?a=1&b=1&s=612x612&w=0&k=20&c=fillZMJAEs_ARkbGw9hMfJnW4qmrAUh8zcZExIRJlVc=');
+  --bg-color: #0a1128;  /* Deep oceanic navy */
+  --text-color: #f8fafc; /* Crisp moonlight silver/white */
+  --accent-color: #38bdf8; /* Glowing night-sky blue */
+  --glass-bg: rgba(10, 17, 40, 0.70); /* Rich navy frosted glass */
+}
+/* A soft, airy pink with highly vibrant magenta accents */
+[data-theme="cherry-blossom"] {
+  --bg-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076&auto=format&fit=crop');
+  --bg-color: #fdf2f8; 
+  --text-color: #1e293b; 
+  --accent-color: #E83C91; 
+  --glass-bg: rgba(255, 255, 255, 0.20); /* Dropped to 20% to let the pink and blue show through */
+}
+
+/* Snowy Taiga: Crisp snow-covered pine trees with icy transparent glass */
+[data-theme="snowy-taiga"] {
+  --bg-image: url('https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2070&auto=format&fit=crop');
+  --bg-color: #f0f9ff; 
+  --text-color: #0f172a; 
+  --accent-color: #0284c7; 
+  --glass-bg: rgba(255, 255, 255, 0.25); /* Icy transparent glass */
+}
+
+/* The Desert Oasis: Warm sand dunes with high-visibility glass */
+[data-theme="desert-oasis"] {
+  --bg-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=2076&auto=format&fit=crop');
+  --bg-color: #fef3c7; 
+  --text-color: #451a03; 
+  --accent-color: #d97706; 
+  --glass-bg: rgba(255, 255, 255, 0.35); 
+}
+
+/* =========================================
+   2. NATURE & ACADEMIC
+========================================= */
+
+/* The Sunlit Canopy: Golden hour, yellowish sunbeams through the trees */
+[data-theme="sunlit-canopy"] {
+  --bg-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop');
+  --bg-color: #fefce8; 
+  --text-color: #422006; 
+  --accent-color: #eab308; 
+  --glass-bg: rgba(255, 255, 255, 0.45); 
+}
+
+/* The Scholar's Greenhouse: Cozy indoor botanical vibes (Fixed Image) */
+[data-theme="scholars-greenhouse"] {
+  --bg-image: url('https://images.unsplash.com/photo-1603896112028-722f1ba2d29a?w=2000&auto=format&fit=crop&q=80&ixlib=rb-4.1.0');
+  --bg-color: #ecfdf5; 
+  --text-color: #022c22; 
+  --accent-color: #059669; 
+  --glass-bg: rgba(255, 255, 255, 0.40); 
+}
+
+/* The Autumn Woods: Crisp fall leaves with a warm tint */
+[data-theme="autumn-woods"] {
+  --bg-image: url('https://images.unsplash.com/photo-1476820865390-c52aeebb9891?q=80&w=2070&auto=format&fit=crop');
+  --bg-color: #ffedd5; 
+  --text-color: #431407; 
+  --accent-color: #ea580c; 
+  --glass-bg: rgba(255, 255, 255, 0.25); 
+}
+
+/* =========================================
+   3. DEEP FOCUS ZONES
+========================================= */
+
+/* The Kelp Forest: Actual towering underwater kelp */
+[data-theme="kelp-forest"] {
+  --bg-image: url('https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=2070&auto=format&fit=crop');
+  --bg-color: #082f49; 
+  --text-color: #f0f9ff; 
+  --accent-color: #0ea5e9; 
+  --glass-bg: rgba(8, 47, 73, 0.45); 
+}
+
+/* The Tropical Rainforest: Lush, deep jungle greens (Fixed link) */
+[data-theme="tropical-rainforest"] {
+  --bg-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
+  --bg-color: #064e3b; 
+  --text-color: #ecfdf5; 
+  --accent-color: #10b981; 
+  --glass-bg: rgba(6, 78, 59, 0.45); 
+}
+
+/* The Crystal Cavern: Glowing purple amethyst crystals (New stable link) */
+[data-theme="crystal-cavern"] {
+  --bg-image: url('../assets/crystal-cavern.jpg');
+  --bg-color: #18181b; 
+  --text-color: #faf5ff; 
+  --accent-color: #a855f7; 
+  --glass-bg: rgba(24, 24, 27, 0.55); 
+}
+
+/* =========================================
+   UI COMPONENT EFFECTS
+========================================= */
+
+/* Apply the frosted glass effect to the main UI components */
+.sidebar, 
+.top-header, 
+.dashboard-card,
+.news-banner {
+  background-color: var(--glass-bg);
+  -webkit-backdrop-filter: blur(12px); /* For Safari support */
+  backdrop-filter: blur(12px); /* This creates the frosted look */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle edge highlight */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Ensure text inside these elements uses the theme's text color */
+.sidebar *, 
+.top-header *, 
+.dashboard-card *,
+.news-banner * {
+  color: var(--text-color);
+}

@@ -1,0 +1,327 @@
+.landingWrapper {
+  background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2532&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e2ede2;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  /* The Scroll Fix */
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.darkOverlay {
+  min-height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(10, 15, 10, 0.3), rgba(5, 10, 5, 0.8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Removed justify-content: center which was breaking the scroll */
+  padding: 8rem 2rem 6rem 2rem;
+  box-sizing: border-box;
+}
+
+.heroSection {
+  text-align: center;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon {
+  font-size: 4.5rem;
+  filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.6));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f0fdf4;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #bbf7d0;
+  margin: 0 0 2rem 0;
+  max-width: 600px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ctaButton {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 1.2rem 3rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ctaButton:hover {
+  background: rgba(74, 222, 128, 0.25);
+  border-color: rgba(74, 222, 128, 0.6);
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
+  transform: translateY(-2px);
+  color: #f0fdf4;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.glassCard {
+  background: rgba(20, 25, 20, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glassCard:hover {
+  transform: translateY(-8px);
+  background: rgba(30, 35, 30, 0.6);
+  border-color: rgba(74, 222, 128, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cardTitle {
+  font-family: 'Georgia', serif;
+  font-size: 1.75rem;
+  color: #4ade80;
+  margin: 0 0 1rem 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.cardText {
+  color: #e2ede2;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 15, 10, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.navBrand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4ade80;
+  font-family: 'Georgia', serif;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease, text-decoration-color 0.3s ease;
+  opacity: 0.85;
+}
+
+.navLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: #4ade80;
+  text-underline-offset: 4px;
+}
+
+/* About Section */
+.aboutSection {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.aboutContent {
+  text-align: center;
+  max-width: 800px;
+}
+
+.sectionTitle {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  color: #f0fdf4;
+  margin-bottom: 1.5rem;
+}
+
+.missionStatement {
+  font-size: 1.15rem;
+  color: #bbf7d0;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.techStack {
+  font-size: 1.05rem;
+  color: #e2ede2;
+}
+
+.techStack strong {
+  color: #4ade80;
+}
+
+/* Feedback Section */
+.feedbackSection {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedbackForm {
+  background: rgba(20, 25, 20, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formLabel {
+  color: #e2ede2;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.formSelect, .formTextarea {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formSelect:focus, .formTextarea:focus {
+  outline: none;
+  border-color: #4ade80;
+}
+
+.formSelect option {
+  background: #111827;
+  color: white;
+}
+
+.formTextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitButton {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 1.2rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background: rgba(74, 222, 128, 0.25);
+  border-color: rgba(74, 222, 128, 0.6);
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
+  transform: translateY(-2px);
+  color: #f0fdf4;
+}
+
+@media (max-width: 900px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .ctaButton {
+    padding: 1rem 2rem;
+  }
+}

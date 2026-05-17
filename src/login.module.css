@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+.leaf-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none; /* Lets you click through the leaves */
+    overflow: hidden;
+    z-index: 0;
+}
+
+.falling-leaf {
+    position: absolute;
+    top: -50px;
+    transition: color 1s ease;
+}
+
+/* Base resets specifically container-scoped */
+.auth-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth-container {
+    /* Break out of any root container constraints */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #020617;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    overflow: hidden;
+    z-index: 9999; /* Ensure it stays above #root */
+}
+
+/* Cinematic Background */
+.forest-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: transform 2s ease, filter 1s ease;
+}
+
+.light-overlay {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+}
+
+/* =========================================
+   SIDE-BY-SIDE LAYOUT WRAPPER 
+   ========================================= */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row !important; /* Force row */
+    gap: 6rem; /* Space between the tree and the login form */
+    width: 100%;
+    max-width: 1100px;
+    padding: 2rem;
+    z-index: 10;
+}
+
+/* =========================================
+   LEFT: TREE BLOOM ANIMATIONS
+   ========================================= */
+.bloom-container {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+    pointer-events: none;
+    color: #4ade80; /* Default Green for Trunk */
+    transition: color 1.2s ease;
+}
+
+.active-bloom {
+    color: #fb923c; /* Autumn Orange for Sign In */
+}
+
+/* THE LEAF LOGIC */
+.leaf {
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s ease;
+}
+
+.active-bloom .leaf {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.6));
+}
+
+.leaf:nth-child(2n) { transition-delay: 0.05s; }
+.leaf:nth-child(3n) { transition-delay: 0.1s; }
+.leaf:nth-child(4n) { transition-delay: 0.15s; }
+.leaf:nth-child(5n) { transition-delay: 0.2s; }
+
+@keyframes breathe {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+.bloom-container {
+    animation: breathe 6s infinite ease-in-out;
+}
+
+/* =========================================
+   RIGHT: AUTH CARD 
+   ========================================= */
+.auth-card {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 420px;
+    padding: 3rem;
+    padding-bottom: 4rem;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.03) !important;
+    -webkit-backdrop-filter: blur(20px) !important; /* for safari */
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 2.5rem !important;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    z-index: 20;
+}
+
+/* Custom Scrollbar for auth card */
+.auth-card::-webkit-scrollbar {
+    width: 6px;
+}
+.auth-card::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: 1rem;
+}
+.auth-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+.auth-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.icon-header {
+    color: white !important;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.icon-header svg {
+    stroke: white !important;
+}
+
+.auth-card h1 { 
+    font-family: 'Playfair Display', serif !important; 
+    font-size: 2.2rem !important; 
+    margin-bottom: 0.5rem !important;
+    margin-top: 0 !important;
+    color: white !important;
+    letter-spacing: normal !important;
+    line-height: 1.2 !important;
+}
+
+.auth-card p { 
+    color: #94a3b8 !important; 
+    font-size: 0.9rem !important; 
+    margin-bottom: 2rem !important; 
+    line-height: 1.5 !important;
+}
+
+.input-group { margin-bottom: 1rem; }
+
+.input-label {
+    display: block;
+    text-align: left;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    color: #cbd5e1;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.helper-text {
+    display: block;
+    text-align: left;
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+    color: #94a3b8;
+    margin-left: 0.5rem;
+}
+
+.auth-card input {
+    width: 100% !important;
+    padding: 1rem 1.5rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 1rem !important;
+    color: white !important;
+    outline: none !important;
+    transition: 0.3s !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem !important;
+    box-sizing: border-box !important;
+}
+
+.auth-card input:focus { 
+    border-color: #4ade80 !important; 
+    background: rgba(255, 255, 255, 0.1) !important; 
+}
+
+.submit-btn {
+    width: 100% !important;
+    padding: 1rem !important;
+    margin-top: 1rem !important;
+    background: #166534 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: 0.3s !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem !important;
+}
+
+.submit-btn:hover { 
+    background: #15803d !important; 
+    transform: translateY(-2px) !important; 
+}
+
+/* Overriding the inline active-bloom styles set by Login.jsx if they try to interfere */
+.submit-btn.signin-btn {
+    background: #9a3412 !important;
+}
+
+.submit-btn.signin-btn:hover {
+    background: #c2410c !important;
+}
+
+
+.toggle-text { 
+    margin-top: 1.5rem !important; 
+}
+
+.toggle-text span {
+    color: #94a3b8 !important; 
+}
+
+.toggle-text a { 
+    color: #4ade80 !important; 
+    font-weight: 600 !important; 
+    text-decoration: none !important; 
+    margin-left: 0.5rem;
+}
+
+/* Responsive layout for mobile phones */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+    .bloom-container {
+        max-width: 250px;
+    }
+}
