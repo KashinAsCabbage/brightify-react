@@ -27,7 +27,7 @@ const AITutor = () => {
         setIsLoading(true);
 
         try {
-            const apiKey = "AIzaSyBg2rqjjLi3XiLaemCIoP_XNd083AS-XwM"; 
+            const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
             const systemPrompt = `You are Beebo, a cute study advisor. Give a 2-sentence study tip for: ${textToSend}`;
 
             // 👇 USING GEMINI 2.5 FLASH 👇
